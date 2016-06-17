@@ -100,11 +100,11 @@ namespace AutoBuddy.MainLogics
 
             if (ObjectManager.Get<Obj_AI_Turret>().Count() == 24)
             {
-                if (AutoWalker.myHero.Gold < 550 && MainMenu.GetMenu("AB").Get<CheckBox>("mid").CurrentValue)
+                if (AutoWalker.myHero.Gold < 550 && MainMenu.GetMenu("AB").Get<CheckBox>("bot").CurrentValue)
                 {
                     Vector3 p =
                         ObjectManager.Get<Obj_AI_Turret>()
-                            .First(tur => tur.IsAlly && tur.Name.EndsWith("C_05_A"))
+                            .First(tur => tur.IsAlly && tur.Name.EndsWith("R_03_A"))
                             .Position;
 
                     Core.DelayAction(() => SafeFunctions.Ping(PingCategory.OnMyWay, p.Randomized()),
